@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Tratamentos e CIDs</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 90%;
+    margin: 30px auto;
+    position: relative;
+    color: #000; /* Texto preto */
+    padding: 20px;
+  }
+
+  /* Criando uma camada com opacidade para a imagem */
+  body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/Sid/sid.png') no-repeat center center;
+    background-size: cover; /* Mantém a imagem cobrindo toda a tela */
+    opacity: 0.2; /* Deixa a imagem mais apagada */
+    z-index: -1;
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #000; /* Texto preto */
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 6px rgba(255, 255, 255, 0.3);
+  }
+
+  .treatment {
+    cursor: pointer;
+    color: #000; /* Texto preto */
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.8); /* Fundo mais suave */
+    border-radius: 10px;
+    margin: 12px 0;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+  }
+
+  .treatment:hover {
+    background: rgba(220, 220, 220, 0.9);
+    transform: scale(1.02);
+  }
+
+  .cid-list {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 16px;
+    border-left: 4px solid #0080ff;
+    color: #000; /* Texto preto */
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.9); /* Melhorando a legibilidade */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    transition: max-height 0.4s ease, padding 0.4s ease;
+  }
+
+  .cid-list.open {
+    max-height: 1000px;
+    padding: 10px;
+  }
+
+  @media screen and (max-width: 768px) {
+    body {
+      max-width: 100%;
+      padding: 10px;
+    }
+
+    h2 {
+      font-size: 20px;
+    }
+
+    .treatment {
+      flex-direction: column;
+      text-align: center;
+      padding: 12px;
+    }
+
+    .cid-list {
+      font-size: 0.9rem;
+      padding: 8px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    h2 {
+      font-size: 18px;
+    }
+
+    .treatment {
+      font-size: 14px;
+    }
+
+    .cid-list {
+      font-size: 0.85rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<h2>Tratamentos e seus CIDs</h2>
+
+<div class="treatment" onclick="toggleCidList('infarto', this)">
+  03.03.06.019-0 - TRATAMENTO DE INFARTO AGUDO DO MIOCÁRDIO
+  <span class="icon">+</span>
+</div>
+<div id="infarto" class="cid-list">
+  <ul>
+    <li>I210 - Infarto agudo transmural da parede anterior do miocárdio</li>
+  <li>I211 - Infarto agudo transmural da parede inferior do miocárdio</li>
+  <li>I212 - Infarto agudo transmural do miocárdio de outras localizações</li>
+  <li>I213 - Infarto agudo transmural do miocárdio, de localização não especificada</li>
+  <li>I214 - Infarto agudo subendocárdico do miocárdio</li>
+  <li>I219 - Infarto agudo do miocárdio não especificado</li>
+  <li>I220 - Infarto do miocárdio recorrente da parede anterior</li>
+  <li>I221 - Infarto do miocárdio recorrente da parede inferior</li>
+  <li>I228 - Infarto do miocárdio recorrente de outras localizações</li>
+  <li>I229 - Infarto do miocárdio recorrente de localização não especificada</li>
+  <li>I230 - Hemopericárdio como complicação atual subsequente ao infarto agudo do miocárdio</li>
+  <li>I231 - Comunicação interatrial como complicação atual subsequente ao infarto agudo do miocárdio</li>
+  <li>I232 - Comunicação interventricular como complicação atual subsequente ao infarto agudo do miocárdio</li>
+  <li>I233 - Ruptura da parede do coração sem ocorrência de hemopericárdio como complicação atual subsequente ao infarto agudo do miocárdio</li>
+  <li>I234 - Ruptura de cordoalhas tendíneas como complicação atual subsequente ao infarto agudo do miocárdio</li>
+  <li>I235 - Ruptura de músculos papilares como complicação atual subsequente ao infarto agudo do miocárdio</li>
+  <li>I236 - Trombose de átrio, aurícula e ventrículo como complicação atual subsequente ao infarto agudo do miocárdio</li>
+  <li>I238 - Outras complicações atuais subsequentes ao infarto agudo do miocárdio</li>
+  <li>R570 - Choque cardiogênico</li>
+  </ul>
+</div>
+
+<div class="treatment" onclick="toggleCidList('sindrome', this)">
+  03.03.06.028-0 - TRATAMENTO DE SÍNDROME CORONARIANA AGUDA
+  <span class="icon">+</span>
+</div>
+<div id="sindrome" class="cid-list">
+  <ul>
+  <li>I011 - Endocardite reumática aguda</li>
+  <li>I200 - Angina instável</li>
+  <li>I201 - Angina pectoris com espasmo documentado</li>
+  <li>I208 - Outras formas de angina pectoris</li>
+  <li>I209 - Angina pectoris, não especificada</li>
+  <li>I210 - Infarto agudo transmural da parede anterior do miocárdio</li>
+  <li>I211 - Infarto agudo transmural da parede inferior do miocárdio</li>
+  <li>I212 - Infarto agudo transmural do miocárdio de outras localizações</li>
+  <li>I213 - Infarto agudo transmural do miocárdio, de localização não especificada</li>
+  <li>I214 - Infarto agudo subendocárdico do miocárdio</li>
+  <li>I220 - Infarto do miocárdio recorrente da parede anterior</li>
+  <li>I240 - Trombose coronária que não resulta em infarto do miocárdio</li>
+  <li>I248 - Outras formas de doença isquêmica aguda do coração</li>
+  </ul>
+</div>
+
+<div class="treatment" onclick="toggleCidList('arritmias', this)">
+  03.03.06.002-6 - TRATAMENTO DE ARRITMIAS
+  <span class="icon">+</span>
+</div>
+<div id="arritmias" class="cid-list">
+  <ul>
+  <li>I440 - Bloqueio atrioventricular de primeiro grau</li>
+  <li>I441 - Bloqueio atrioventricular de segundo grau</li>
+  <li>I442 - Bloqueio atrioventricular total</li>
+  <li>I456 - Síndrome de pré-excitação</li>
+  <li>I470 - Arritmia ventricular por reentrada</li>
+  <li>I471 - Taquicardia supraventricular</li>
+  <li>I472 - Taquicardia ventricular</li>
+  <li>I48 - Flutter e fibrilação atrial</li>
+  <li>I490 - Flutter e fibrilação ventricular</li>
+  <li>I495 - Síndrome do nó sinusal</li>
+  <li>R55 - Síncope e colapso</li>
+  </ul>
+</div>
+
+<div class="treatment" onclick="toggleCidList('insuficiencia', this)">
+  03.03.06.021-2 - TRATAMENTO DE INSUFICIÊNCIA CARDÍACA
+  <span class="icon">+</span>
+</div>
+<div id="insuficiencia" class="cid-list">
+  <ul>
+  <li>I420 - Cardiomiopatia dilatada</li>
+  <li>I426 - Cardiomiopatia alcoólica</li>
+  <li>I427 - Cardiomiopatia devida a drogas e outros agentes externos</li>
+  <li>I428 - Outras cardiomiopatias</li>
+  <li>I500 - Insuficiência cardíaca congestiva</li>
+  <li>I501 - Insuficiência ventricular esquerda</li>
+  <li>I509 - Insuficiência cardíaca não especificada</li>
+  <li>I514 - Miocardite não especificada</li>
+  <li>I515 - Degeneração miocárdica</li>
+  <li>I516 - Doença cardiovascular não especificada</li>
+  <li>I517 - Cardiomegalia</li>
+  </ul>
+</div>
+
+<script>
+function toggleCidList(id, element) {
+  const list = document.getElementById(id);
+  const icon = element.querySelector('.icon');
+  list.classList.toggle('open');
+  icon.textContent = list.classList.contains('open') ? '–' : '+';
+}
+</script>
+
+</body>
+</html>
